@@ -1,2 +1,1 @@
-# Gabriele Prato
-https://www.linkedin.com/in/pratogab/
+https://pratogab.github.io
