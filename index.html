@@ -3,10 +3,35 @@
 <head>
     <meta charset="utf-8">
     <title>Gabriele Prato</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div id="profile_picture"><img src="images/profile.jpg" alt="Profile Picture" width="486" height="486"></div>
+    <img src="images/profile.jpg" alt="Profile Picture" id="profile_picture">
+    <div id="name">Gabriele Prato</div>
+    <!--<div id="email">pratogab@mila.quebec</div>-->
+    <table id="links">
+        <tr>
+            <td><a href="mailto:pratogab@mila.quebec"><img src="images/mail.png" alt="Email Address" id="email_logo"></a></td>
+            <td><a href="resume.pdf"><img src="images/cv.png" alt="Curriculum Vitae" id="cv_logo"></a></td>
+            <td><a href="https://www.linkedin.com/in/pratogab"><img src="images/linkedin.png" alt="LinkedIn" id="linkedin_logo"></a></td>
+            <td><a href="http://scholar.google.ca/citations?user=9D_y8ssAAAAJ&hl=en"><img src="images/googlescholar.png" alt="Google Scholar" id="googlescholar_logo"></td>
+            <td><a href="https://github.com/pratogab"><img src="images/github.png" alt="Github" id="github_logo"></a></td>
+        </tr>
+    </table>
+    <div id="papers">
+        <div class="paper">
+            <a href="https://arxiv.org/abs/1910.10485">
+            <span class="paper-name">Fully Quantized Transformer for Machine Translation</span><br/>
+            <span class="paper-conference">NeurIPS EMC2 Workshop 2019</span>
+            </a>
+        </div>
+        <div class="paper">
+            <a href="https://arxiv.org/abs/1906.01659">
+            <span class="paper-name">Towards Lossless Encoding of Sentences</span><br/>
+            <span class="paper-conference">ACL 2019</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>

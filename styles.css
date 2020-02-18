@@ -1,3 +1,87 @@
 #profile_picture {
-    margin: 0 auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 486px;
+    height: 486px;
+}
+
+#name {
+    text-align: center;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+#email {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+}
+
+#links {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: center;
+}
+
+#email_logo {
+    /*margin: auto;*/
+    padding-top: 4px;
+    width: 20px;
+    height: 13px;
+}
+
+#cv_logo {
+    /*margin: auto;*/
+    padding-top: 3px;
+    width: 23.65px;
+    height: 13.75px;
+}
+
+#linkedin_logo {
+    /*margin: auto;*/
+    width: 22.25px;
+    height: 21px;
+}
+
+#googlescholar_logo {
+    /*margin: auto;*/
+    width: 19.8px;
+    height: 21.45px;
+}
+
+#github_logo {
+    /*margin: auto;*/
+    width: 19px;
+    height: 19px;
+}
+
+#papers {
+    padding-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paper {
+    padding-bottom: 15px;
+}
+
+.paper-name {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+}
+
+.paper-conference {
+    font-size: 18px;
+    color: grey;
+}
+
+a {
+  text-decoration: none;
 }
