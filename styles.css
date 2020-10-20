@@ -71,6 +71,14 @@
     padding-bottom: 15px;
 }
 
+.paper:hover .paper-name {
+    color: #D3D3D3;
+}
+
+.paper:hover .paper-conference {
+    color: #DCDCDC;
+}
+
 .paper-name {
     font-weight: bold;
     font-size: 24px;
