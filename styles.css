@@ -1,74 +1,152 @@
-#profile_picture {
-    display: block;
+body {
+    transform-origin: top center; /* Sets the origin for the scaling */
+    transform: scale(0.8); /* Scales the whole body of the website */
+  }
+
+#profile_container {
     margin-left: auto;
     margin-right: auto;
     width: 486px;
     height: 486px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#profile_picture {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 #name {
     text-align: center;
     padding-top: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     font-size: 50px;
+    letter-spacing: 1px;
+    color: #333366;
 }
 
-#status {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+#about {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+#email_td {
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+
+#email_td::after {
+  content: '';
+  position: absolute;
+  right: 0; /* Align the pseudo-element to the right edge of the td */
+  top: 50%; /* Align the top edge of the pseudo-element to the vertical middle of the td */
+  width: 2px; /* Width of the vertical bar */
+  height: 70%; /* Height of the vertical bar (50% of the td height in this case) */
+  background-color: #555; /* Color of the vertical bar */
+  border-radius: 1px; /* Roundness of the ends of the vertical bar */
+  transform: translateY(-50%); /* Center the bar vertically */
 }
 
 #email {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #006699; /* Medium Blue */
+    padding-right: 20px;
 }
 
 #links {
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
     text-align: center;
+    padding-right: 38px;
+    margin-top: 5px;
 }
 
-#email_logo {
-    /*margin: auto;*/
-    padding-top: 4px;
-    width: 30px;
-    height: 19.5px;
+.logo_td {
+    text-align: center; /* Centers the content of the table cell */
 }
 
-#cv_logo {
-    /*margin: auto;*/
+.logo {
+    display: inline-block; /* Allows the element to be inline but also have a width and height */
+    position: relative;
+    height: 25px; /* Fixed height for the logo */
+    width: 25px; /* Fixed height for the logo */
+}
+
+.logo img {
+    width: auto; /* Allows the image to maintain its aspect ratio */
+    height: 100%; /* Makes the image fill the height of its parent */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centers the image within its parent */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.logo .logo_nohover {
+    z-index: 2; /* Higher z-index so it's on top */
+}
+
+.logo .logo_hover {
+    opacity: 0;
+    z-index: 1; /* Behind the nohover image */
+}
+
+.logo:hover .logo_nohover {
+    opacity: 0; /* Hide the nohover image on hover */
+}
+
+.logo:hover .logo_hover {
+    opacity: 1; /* Show the hover image on hover */
+}
+
+#cv_td {
+    padding-left: 22px; /* Custom left padding for LinkedIn logo */
+}
+
+#googlescholar_td {
+    padding-left: 18px;
+}
+
+#linkedin_td {
+    padding-left: 22px;
+}
+
+#github_td {
+    padding-left: 24px;
+}
+
+#twitter_td {
+    padding-left: 29px;
+}
+
+#cv_logo .logo_nohover,
+#cv_logo .logo_hover {
+    height: 17px; /* Example of a different height */
+    width: auto;  /* Maintain the aspect ratio */
     padding-top: 3px;
-    width: 35.475px;
-    height: 20.625px;
 }
 
-#linkedin_logo {
-    /*margin: auto;*/
-    width: 33.375px;
-    height: 31.5px;
-}
-
-#googlescholar_logo {
-    /*margin: auto;*/
-    width: 29.7px;
-    height: 32.175px;
-}
-
-#github_logo {
-    /*margin: auto;*/
-    width: 28.5px;
-    height: 28.5px;
+#googlescholar_logo .logo_nohover,
+#googlescholar_logo .logo_hover {
+    padding-top: 3px;
 }
 
 #papers {
-    padding-top: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 650px;
+    padding-top: 20px;
+    width: 720px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -77,25 +155,55 @@
     padding-bottom: 15px;
 }
 
-.paper:hover .paper-name {
-    color: #D3D3D3;
-}
-
-.paper:hover .paper-conference {
-    color: #DCDCDC;
-}
-
 .paper-name {
+    transition: color 0.25s ease-in-out; /* Smooth transition for the effect */
+    font-size: 22px;
+    color: #666699; /* Muted Blue */
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 24px;
-    color: black;
 }
 
 .paper-conference {
     font-size: 18px;
-    color: grey;
+    color: #9e9e9e;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+}
+
+.paper:hover .paper-name {
+    color: #DB7093; /* Pale Violet Red */
 }
 
 a {
   text-decoration: none;
+}
+
+#hr-with-text {
+    position: relative;
+    border: none;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#hr-with-text::before,
+#hr-with-text::after {
+    content: "";
+    display: inline-block;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    border-bottom: 1px solid;
+    margin-bottom: 12px;
+}
+
+#hr-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #333366;
+    font-weight: bold;
+    font-size: 33px;
+    letter-spacing: 3px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
