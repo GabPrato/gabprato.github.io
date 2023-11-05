@@ -1,3 +1,10 @@
+@media screen and (max-width: 720px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
 body {
     transform-origin: top center; /* Sets the origin for the scaling */
     transform: scale(0.8); /* Scales the whole body of the website */
