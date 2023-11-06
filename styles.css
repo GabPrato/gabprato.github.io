@@ -1,3 +1,54 @@
+@media (max-width: 767px) {
+    #links,
+    #links table {
+        width: 100%; /* Ensure the table uses the full width */
+        border-spacing: 0; /* Reset spacing between cells */
+        border-collapse: collapse; /* Collapse borders to remove any space between cells */
+    }
+
+    #links tr {
+        display: block; /* Override table row display */
+        text-align: center; /* Center text for all content within */
+    }
+
+    #email_td {
+        display: block; /* Override table cell display */
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Reset padding to ensure it's not affecting the centering */
+        text-align: center; /* Center the text inside */
+        padding-bottom: 5px;
+        padding-left: 15px;
+    }
+
+    #email_td::after {
+        display: none; /* Hide the vertical bar on smaller screens */
+    }
+
+    .logo_td {
+        display: inline-block; /* Align logos horizontally */
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    /* Since the email is now a block, it should center itself. */
+    #email {
+        display: inline; /* Make the email text inline for centering within the block */
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
+    }
+
+    /* Ensure that images within the logo links are centered and not inheriting any text-align */
+    .logo a {
+        text-align: center;
+        display: block; /* Block display to fill the parent width */
+    }
+
+    #cv_td {
+        margin-left: -20px;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 1079px) {
     body {
         transform-origin: top center;
@@ -57,15 +108,15 @@
 }
 
 #email_td::after {
-  content: '';
-  position: absolute;
-  right: 0; /* Align the pseudo-element to the right edge of the td */
-  top: 50%; /* Align the top edge of the pseudo-element to the vertical middle of the td */
-  width: 2px; /* Width of the vertical bar */
-  height: 70%; /* Height of the vertical bar (50% of the td height in this case) */
-  background-color: #555; /* Color of the vertical bar */
-  border-radius: 1px; /* Roundness of the ends of the vertical bar */
-  transform: translateY(-50%); /* Center the bar vertically */
+    content: '';
+    position: absolute;
+    right: 0; /* Align the pseudo-element to the right edge of the td */
+    top: 50%; /* Align the top edge of the pseudo-element to the vertical middle of the td */
+    width: 2px; /* Width of the vertical bar */
+    height: 70%; /* Height of the vertical bar (50% of the td height in this case) */
+    background-color: #555; /* Color of the vertical bar */
+    border-radius: 1px; /* Roundness of the ends of the vertical bar */
+    transform: translateY(-50%); /* Center the bar vertically */
 }
 
 #email {
