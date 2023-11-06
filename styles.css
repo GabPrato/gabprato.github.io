@@ -16,7 +16,7 @@
         margin: 0; /* Remove any default margin */
         padding: 0; /* Reset padding to ensure it's not affecting the centering */
         text-align: center; /* Center the text inside */
-        padding-bottom: 5px;
+        padding-bottom: 10px;
         padding-left: 15px;
     }
 
