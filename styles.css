@@ -1,14 +1,9 @@
-@media screen and (max-width: 720px) {
-  .container {
-    width: 100%;
-    padding: 0 10px;
-  }
+@media (min-width: 900px) {
+    body {
+        transform-origin: top center;
+        transform: scale(0.8);
+    }
 }
-
-body {
-    transform-origin: top center; /* Sets the origin for the scaling */
-    transform: scale(0.8); /* Scales the whole body of the website */
-  }
 
 #profile_container {
     margin-left: auto;
@@ -42,7 +37,8 @@ body {
     text-align: left;
     font-size: 22px;
     font-family: 'Roboto', sans-serif;
-    width: 720px;
+    max-width: 720px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
@@ -153,7 +149,8 @@ body {
 
 #papers {
     padding-top: 20px;
-    width: 720px;
+    max-width: 720px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -182,7 +179,7 @@ body {
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #hr-with-text {
@@ -197,9 +194,10 @@ a {
 #hr-with-text::after {
     content: "";
     display: inline-block;
-    width: 240px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 240px;
+    width: calc(50% - 120px);
+    margin-left: 0;
+    margin-right: 0;
     vertical-align: middle;
     border-bottom: 1px solid;
     margin-bottom: 12px;
