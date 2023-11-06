@@ -197,14 +197,22 @@
 
 #cv_logo .logo_nohover,
 #cv_logo .logo_hover {
-    height: 17px; /* Example of a different height */
-    width: auto;  /* Maintain the aspect ratio */
+    height: 18px;
+    width: auto;
     padding-top: 3px;
 }
 
 #googlescholar_logo .logo_nohover,
 #googlescholar_logo .logo_hover {
     padding-top: 3px;
+    width: auto;
+    height: 27px;
+}
+
+#github_logo .logo_nohover,
+#github_logo .logo_hover {
+    width: auto;
+    height: 27px;
 }
 
 #papers {
