@@ -1,0 +1,178 @@
+---
+layout: page
+
+permalink: /epik-eval/
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EpiK-Eval</title>
+    <link rel="stylesheet" href="/blog_posts/epik-eval/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="/" class="profile-with-name">
+        <img src="/images/profile_with_alpha.png" alt="Profile Picture" class="profile-picture">
+        <div class="name-text">Gabriele Prato</div>
+    </a>
+    <hr id="hr-menu" />
+    <div id="blog_post_name">EpiK-Eval and the Role of Knowledge Consolidation in Language Models</div>
+    <table id="paper-links">
+        <tr>
+            <td class="paper-link-td paper-link-vert-bar"><a href="https://arxiv.org/abs/2310.15372" class="paper-link">Paper</a></td>
+            <td class="paper-link-td paper-link-vert-bar paper-link-pad-left"><a href="https://github.com/chandar-lab/EpiK-Eval" class="paper-link">Code</a></td>
+            <td class="paper-link-td paper-link-pad-left"><a href="" class="paper-link">Video</a></td>
+        </tr>
+    </table>
+    <div id="blog_post">
+        Large Language Models (LLMs) have dramatically transformed the landscape, heralding a significant shift in research focus and reshaping the industry at large. This transformative impact primarily stems from advancements in computational scale rather than methodological innovations. While scaling up has undeniably enhanced model performance, it is crucial to recognize that several challenges remain unaddressed by mere scale, including:
+        <ul>
+          <li>Alignment</li>
+          <li>Continual Learning</li>
+          <li>Context Length</li>
+          <li>Hallucinations</li>
+          <li>Computational Efficiency</li>
+        </ul>
+        In this post, we explore an additional issue belonging to this list, one that has been overlooked despite its importance: knowledge consolidation.
+        <div id="section_title">Knowledge Consolidation</div>
+        The training corpora of LLMs are immense, containing a myriad of facts, events, topics, concepts, ideas, and various pieces of knowledge. These elements can relate to one another in many different ways, forming a complex web of dependencies.
+        <div id="slide7-container"><img id="slide7" src="/blog_posts/epik-eval/images/slide7.svg"/></div>
+        However, LLMs do not inherently learn all these dependencies.
+        <div id="slide8-container"><img id="slide8" src="/blog_posts/epik-eval/images/slide8.svg"/></div>
+        This limitation stems from their training objectives. LLMs are trained to predict tokens based on the context within a given text sequence, utilizing the knowledge encoded in their training parameters.
+        <div id="slide9-container"><img id="slide9" src="/blog_posts/epik-eval/images/slide9.svg"/></div>
+        As a result, if the content of one training sample does not aid in predicting the content of another, the model receives no signal to establish a relationship between them. Consider the example of two news articles: one mentioning a celebrity's wedding in Miami in six months, and another, dated six months later, reporting a hurricane in Florida.
+        <div id="slide10-container"><img id="slide10" src="/blog_posts/epik-eval/images/slide10.svg"/></div>
+        Since the content of one article doesn't directly help in predicting the content of the other, the model does not learn to relate them. Therefore, during inference, the model wouldn't associate the hurricane with the potential impact on the wedding's logistics.
+        <div id="slide11-container"><img id="slide11" src="/blog_posts/epik-eval/images/slide11.svg"/></div>
+        This leads us to the crux of knowledge consolidation: the model is aware of both events (A and B), but it is unaware of the relationship between them.
+        <div id="slide12-container"><img id="slide12" src="/blog_posts/epik-eval/images/slide12.svg"/></div>
+        To overcome this, the model needs to consolidate its knowledge, learning to connect related but disparate pieces of information.
+        <div id="slide13-container"><img id="slide13" src="/blog_posts/epik-eval/images/slide13.svg"/></div>
+
+        <div id="section_title">EpiK-Eval Benchmark</div>
+        The <span class="in-text-paper-link-container"><a class="in-text-paper-link" href="https://arxiv.org/abs/2310.15372">EpiK-Eval</a></span> benchmark was key in revealing the knowledge consolidation challenge in LLMs. Our primary objective was to assess LLMs' ability to utilize information distributed across different training samples.
+        </br></br>
+        We began by dividing stories into smaller passages.
+        <div id="slide15-container"><img id="slide15" src="/blog_posts/epik-eval/images/slide15.svg"/></div>
+        Next, we trained one model on these unsegmented stories
+        <div id="slide16top-container"><img id="slide16top" src="/blog_posts/epik-eval/images/slide16.svg"/></div>
+        and another on the segmented versions.
+        <div id="slide16bot-container"><img id="slide16bot" src="/blog_posts/epik-eval/images/slide16.svg"/></div>
+        The critical test involved querying the latter model with questions that required synthesizing information from multiple story segments.
+        <div id="slide17-18-container">
+            <img id="slide17" src="/blog_posts/epik-eval/images/slide17.svg"/>
+            <img id="slide18" src="/blog_posts/epik-eval/images/slide18.svg"/>
+        </div>
+        This approach allowed us to compare its performance against the prior model trained on unsegmented stories. The comparison highlighted the added challenge of processing information dispersed across various training samples as opposed to recalling it from a single source.
+        <br/><br/>
+        Unlike multi-hop question answering, our models relied exclusively on the information encoded in their parameters, without access to the original documents.
+        <br/><br/>
+        For practical reasons, we used self-generated short stories, each only a few sentences long, and segmented them by sentence. We trained the models using standard pre-training objectives, such as causal or masked language modeling. Here's an illustrative example: a story about a person visiting a restaurant and ordering items.
+        <div id="slide20top-container"><img id="slide20top" src="/blog_posts/epik-eval/images/slide20.svg"/></div>
+        <div id="slide20bot-container"><img id="slide20bot" src="/blog_posts/epik-eval/images/slide20.svg"/></div>
+        In our question-answer format, the model first had to recall the entire story, testing its ability to recall and consolidate the learned segments. This was followed by a reasoning statement and a conclusive answer.
+        <div id="slide21-container"><img id="slide21" src="/blog_posts/epik-eval/images/slide21.svg"/></div>
+        To acclimate models to this format, we incorporated question-answer example pairs in the training dataset.
+
+        <div id="subsection_title">Results</div>
+        Our findings revealed a significant disparity in performance between models trained on segmented stories and those trained on unsegmented stories. The following plot illustrates this difference: models trained on segmented stories (<span class="orange-text">orange</span>) underperform compared to those trained on unsegmented stories (<span class="blue-text">blue</span>), with the y-axis representing the percentage of correctly answered questions.
+        <img id="slide19" src="/blog_posts/epik-eval/images/slide19.svg"/>
+        Breaking down our analysis into the three components—recall, reasoning, and the final answer—yielded the following insights:
+        <div id="slide22-container"><img id="slide22" src="/blog_posts/epik-eval/images/slide22A.svg"/></div>
+        Firstly, we assessed the accuracy of recall alone. Here, a notable performance gap was observed, favoring models trained on unsegmented stories.
+        <br/><br/>
+        Next, focusing on instances where recall was accurate, we evaluated the correctness of reasoning.
+        <div id="slide22-container"><img id="slide22" src="/blog_posts/epik-eval/images/slide22B.svg"/></div>
+        The results showed similar performance levels between both setups. Although models trained on segmented stories exhibited marginally better reasoning, we attribute this to variance. This is because the subset of correctly recalled answers was smaller for models trained on segmented stories, as shown in the Recall plot. Thus, we do not infer any enhancement in reasoning capabilities from segmented story training.
+        <br/><br/>
+        Finally, we analyzed the subset of answers where both recall and reasoning were correct, examining the accuracy of the final answer.
+        <div id="slide22-container"><img id="slide22" src="/blog_posts/epik-eval/images/slide22C.svg"/></div>
+        Once again, the performance was comparable between both setups, with the argument about variance remaining valid.
+        <br/><br/>
+        Overall, our results indicate that the primary challenge for models trained on segmented stories lies in accurately recalling and consolidating knowledge, unlike their unsegmented counterparts. Despite both setups showing perfect memorization of training samples—as evidenced by a near-zero hallucination rate during training—
+        <div id="slide22-container"><img id="slide22" src="/blog_posts/epik-eval/images/slide23A.svg"/></div>
+        a different trend emerged during inference. Models trained on segmented stories exhibited a higher rate of hallucinations in their recall responses.
+        <div id="slide22-container"><img id="slide22" src="/blog_posts/epik-eval/images/slide23B.svg"/></div>
+        Interestingly, these models not only struggled with piecing together the story segments but also began introducing hallucinations within sentences they had previously memorized flawlessly. This phenomenon occurred exclusively when tasked with reconstructing the entire story, not when recalling individual sentences.
+        <div id="slide24-container"><img id="slide24" src="/blog_posts/epik-eval/images/slide24.svg"/></div>
+
+        <div id="section_title">Implications and Future Directions</div>
+        A pertinent question arising from our study is whether scaling up models will address the challenge of knowledge consolidation. While we observe general performance improvement with increased scale in both segmented and unsegmented story training setups, a key indicator for scale resolving knowledge consolidation would be a disproportionately higher improvement rate in models trained on segmented stories.
+        <div id="slide27-container"><img id="slide27" src="/blog_posts/epik-eval/images/slide27.svg"/></div>
+        Though possible at larger scales, and certainly warranting further investigation with larger models, the inherent limitations of the training objectives – which do not explicitly encourage learning inter-sample dependencies – leads us to believe that scale alone may not suffice. However, it's worth considering that a sufficiently large and diverse training corpus might inadvertently cover essential dependencies, mitigating this issue in practice. This hypothesis requires deeper exploration.
+        <br/><br/>
+        Another query might be: why not employ retrieval tools to supplement model recall? While feasible, and already implemented in systems like ChatGPT, the fundamental challenge persists.
+        <div id="slide29-container"><img id="slide29" src="/blog_posts/epik-eval/images/slide29.svg"/></div>
+        In the long term, cutting-edge retrieval systems are likely to be AI-driven rather than manually engineered. Whether it's a language model or a retrieval system, the AI needs to comprehend and navigate the intricate web of relationships among diverse data types—topics, facts, books, news articles, blog posts, papers, etc. Given that the only ground truth are the documents themselves,
+        <div id="slide30-container"><img id="slide30" src="/blog_posts/epik-eval/images/slide30.svg"/></div>
+        and not the inter-document relationships, any system we deploy must autonomously learn and consolidate these relationships from the dataset.
+        <div id="slide31-container"><img id="slide31" src="/blog_posts/epik-eval/images/slide31.svg"/></div>
+
+        <div id="section_title">Conclusion</div>
+        Our study with the <span class="in-text-paper-link-container"><a class="in-text-paper-link" href="https://arxiv.org/abs/2310.15372">EpiK-Eval</a></span> benchmark has highlighted a significant limitation of Large Language Models (LLMs): they do not inherently learn all dependencies present in their training data, even though such dependencies are crucial for effective problem-solving. This realization underscores the need for continued research into this phenomenon. More importantly, it calls for the development of innovative methods to address this fundamental challenge. Successfully consolidating the knowledge within LLMs could greatly enhance their utility across various scales and applications.
+        <div id="slide33-34-container">
+            <div id="slide33background" class="slide33-34"><img src="/blog_posts/epik-eval/images/slide33B.svg"/></div>
+            <div id="slide33" class="slide33-34"><img src="/blog_posts/epik-eval/images/slide33.svg"/></div>
+            <div id="slide34" class="slide33-34"><img src="/blog_posts/epik-eval/images/slide34.svg"/></div>
+        </div>
+        To delve deeper into our findings and methodology, we invite you to read the full <span class="in-text-paper-link-container"><a class="in-text-paper-link" href="https://arxiv.org/abs/2310.15372">EpiK-Eval</a></span> paper. For those interested in hands-on exploration or further research, our code is available on <span class="in-text-paper-link-container"><a class="in-text-paper-link" href="https://github.com/chandar-lab/EpiK-Eval">Github</a></span>. We encourage collaboration and innovation in this exciting field and look forward to seeing how the community advances these concepts.
+        <table id="author-list-row1">
+            <tr>
+                <td id="author-gabriele"><a id="author-link" href="https://gabprato.github.io/">Gabriele Prato</a></td>
+                <td id="author-jerry"><a id="author-link" href="https://jhuang265.github.io/">Jerry Huang</a></td>
+                <td><a id="author-link" href="https://cs.mcgill.ca/~pparth2/">Prasannna Parthasarathi</a></td>
+            </tr>
+        </table>
+        <table id="author-list-row2">
+            <tr>
+                <td id="author-shagun"><a id="author-link" href="https://shagunsodhani.com/">Shagun Sodhani</a></td>
+                <td><a id="author-link" href="http://sarathchandar.in/">Sarath Chandar</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var image1 = document.getElementById('slide33');
+            var image2 = document.getElementById('slide34');
+            var visible = true;
+            var transitionDelay = 700; // Delay in milliseconds
+
+            setInterval(function() {
+                if (visible) {
+                    // Fade out image1
+                    image1.style.opacity = 0;
+                    // Delay before fading in image2
+                    setTimeout(function() {
+                        image2.style.opacity = 1;
+                    }, transitionDelay);
+                } else {
+                    // Fade out image2
+                    image2.style.opacity = 0;
+                    // Delay before fading in image1
+                    setTimeout(function() {
+                        image1.style.opacity = 1;
+                    }, transitionDelay);
+                }
+                visible = !visible;
+            }, 4000 + transitionDelay); // Total cycle time including the delay
+
+            // Reset animation
+            image1.addEventListener('transitionend', resetAnimation);
+            image2.addEventListener('transitionend', resetAnimation);
+
+            function resetAnimation(e) {
+                e.target.style.animation = 'none';
+                setTimeout(function() {
+                    e.target.style.animation = '';
+                }, 0);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+body {
+    min-width: 720px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.profile-with-name {
+    display: flex;
+    align-items: center; /* This will vertically center align the text with the image */
+    margin-left: 9px;
+    margin-top: -2.5px;
+    margin-bottom: -2.5px;
+    text-decoration: none;
+}
+
+.profile-picture {
+    border-radius: 50%; /* Makes the image round */
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6); /* Shadow effect */
+    margin-right: 9px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.name-text {
+    font-size: 20px; /* Adjusted font size */
+    color: #333; /* Dark gray color for a subtle look */
+    font-family: 'Arial', sans-serif; /* Modern and clean font */
+    font-weight: normal; /* Regular font weight for simplicity */
+    letter-spacing: normal; /* Standard letter spacing */
+    transition: color 0.25s ease-in-out; /* Smooth transition for the effect */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.profile-with-name:hover .name-text {
+    color: #666; /* Color change on hover */
+}
+
+#hr-menu {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    height: 1px;
+    background-color: #DDDDDD;
+    border: none;
+}
+
+#blog_post_name {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    max-width: 720px;
+    color: #333366;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#paper-links {
+    margin-top: 5px;
+    text-align: center;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paper-link {
+    transition: color 0.25s ease-in-out; /* Smooth transition for the effect */
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 26px;
+    color: #006699; /* Medium Blue */
+    font-weight: bold;
+}
+
+.paper-link-td:hover .paper-link {
+    color: #0099cc;
+}
+
+.paper-link-vert-bar {
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    padding-right: 17px;
+}
+
+.paper-link-vert-bar::after {
+    content: '';
+    position: absolute;
+    right: 0; /* Align the pseudo-element to the right edge of the td */
+    top: 50%; /* Align the top edge of the pseudo-element to the vertical middle of the td */
+    width: 2px; /* Width of the vertical bar */
+    height: 70%; /* Height of the vertical bar (50% of the td height in this case) */
+    background-color: #006699; /* Color of the vertical bar */
+    border-radius: 1px; /* Roundness of the ends of the vertical bar */
+    transform: translateY(-50%); /* Center the bar vertically */
+}
+
+.paper-link-pad-left {
+    padding-left: 15px;
+}
+
+#blog_post {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 720px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+    margin-bottom: 80px;
+}
+
+#section_title, #subsection_title {
+    font-family: 'Montserrat', sans-serif;
+    color: #333366;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#section_title {
+    font-size: 33px;
+}
+
+#subsection_title {
+    font-size: 30px;
+}
+
+.in-text-paper-link {
+    transition: color 0.25s ease-in-out; /* Smooth transition for the effect */
+    text-decoration: none;
+    color: #006699; /* Medium Blue */
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.in-text-paper-link-container:hover .in-text-paper-link {
+    color: #0099cc;
+}
+
+.orange-text {
+    color: #ff9800;
+}
+
+.blue-text {
+    color: #007fff;
+}
+
+#slide7 {
+    width: 120%;
+    height: auto;
+    display: block;
+    margin-left: -10%; /* Half of the extra 50% width to center the image */
+    margin-right: -10%;
+}
+
+#slide7-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative; /* For positioning context */
+    height: 460px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide8 {
+    width: 120%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -30px; /* Adjust this to control the cropping from the top */
+    margin-left: -10%; /* Half of the extra 50% width to center the image */
+    margin-right: -10%;
+}
+
+#slide8-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 445px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide9 {
+    width: 120%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -160px; /* Adjust this to control the cropping from the top */
+    margin-left: -10%; /* Half of the extra 50% width to center the image */
+    margin-right: -10%;
+}
+
+#slide9-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 160px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide10 {
+    width: 130%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -90px; /* Adjust this to control the cropping from the top */
+    margin-left: -15%; /* Half of the extra 50% width to center the image */
+    margin-right: -15%;
+}
+
+#slide10-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 380px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide11 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -80px; /* Adjust this to control the cropping from the top */
+}
+
+#slide11-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 255px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide12 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -45px; /* Adjust this to control the cropping from the top */
+}
+
+#slide12-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 315px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide13 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -55px; /* Adjust this to control the cropping from the top */
+}
+
+#slide13-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 315px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide15 {}
+
+#slide15-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#slide16top {
+    width: 150%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -25%; /* Half of the extra 50% width to center the image */
+    margin-right: -25%;
+}
+
+#slide16top-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 290px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide16bot {
+    width: 150%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -25%; /* Half of the extra 50% width to center the image */
+    margin-right: -25%;
+    top: -300px; /* Adjust this to control the cropping from the top */
+}
+
+#slide16bot-container {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 310px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide17 {
+    width: 110%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -5%; /* Half of the extra 50% width to center the image */
+    margin-right: -5%;
+    opacity: 1;
+}
+
+#slide18 {
+    width: 110%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -5%; /* Half of the extra 50% width to center the image */
+    margin-right: -5%;
+    animation: alternateImage 8s infinite;
+    opacity: 0;
+}
+
+@keyframes alternateImage {
+    0%, 35% {
+        opacity: 0;
+    }
+    35%, 39% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    65%, 100% {
+        opacity: 0;
+    }
+}
+
+#slide17-18-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 465px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide20top {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+}
+
+#slide20top-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 191px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+    margin-top: 30px;
+}
+
+#slide20bot {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -193px;
+}
+
+#slide20bot-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 250px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+    margin-top: 30px;
+}
+
+#slide21 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -30px; /* Adjust this to control the cropping from the top */
+}
+
+#slide21-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 350px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide19 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#slide22 {
+    width: 115%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -7.5%; /* Half of the extra 50% width to center the image */
+    margin-right: -7.5%;
+}
+
+#slide22-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 480px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+    margin-top: 15px;
+}
+
+#slide24 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -90px; /* Adjust this to control the cropping from the top */
+}
+
+#slide24-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 220px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide27 {
+    width: 110%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -5%;
+    margin-right: -5%;
+    top: -20px;
+}
+
+#slide27-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 370px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide29 {
+    width: 200%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -50%;
+    margin-right: -50%;
+    top: -240px;
+}
+
+#slide29-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 320px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide30 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+}
+
+#slide30-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    margin-top: 20px;
+    height: 425px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#slide31 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+}
+
+#slide31-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    margin-top: 20px;
+    height: 415px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+.slide33-34 {
+    width: 115%;
+    height: auto;
+    display: block;
+    position: absolute;
+    margin-left: -7.5%;
+    margin-right: -7.5%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#slide33 {
+    opacity: 1; /* Start fully visible */
+}
+
+#slide33background {
+    opacity: 1;
+    z-index: 1; /* Below other images */
+}
+
+#slide33, #slide34 {
+    z-index: 2; /* Above the background image */
+}
+
+#slide33-34-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    height: 470px;
+    overflow: hidden; /* Hides the overflowing part of the image */
+}
+
+#author-list-row1, #author-list-row2 {
+    font-size: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#author-list-row1 {
+    margin-top: 12.5px;
+}
+
+#author-list-row2 {
+    margin-top: -5px;
+}
+
+#author-gabriele, #author-jerry, #author-shagun {
+    padding-right: 20px;
+}
+
+#author-gabriele {
+    padding-left: 50px;
+}
+
+#author-link {
+    color: #737373;
+    text-decoration: none;
+}
+
+#author-link:hover {
+    text-decoration: underline;
+    color: #535353;
+}
+
+#license {
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+#license-link {
+    text-decoration: none;
+    color: #ce4919;
+}
+
+#license-link:hover {
+    text-decoration: underline;
+    color: #333333;
+}

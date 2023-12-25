@@ -63,6 +63,10 @@
     }
 }
 
+body {
+    margin-top: 20px;
+}
+
 #profile_container {
     margin-left: auto;
     margin-right: auto;
@@ -250,7 +254,7 @@ a {
     text-decoration: none;
 }
 
-#hr-with-text {
+#hr-pub, #hr-blog {
     position: relative;
     border: none;
     text-align: center;
@@ -258,12 +262,25 @@ a {
     white-space: nowrap;
 }
 
-#hr-with-text::before,
-#hr-with-text::after {
+#hr-pub::before,
+#hr-pub::after {
     content: "";
     display: inline-block;
     max-width: 240px;
     width: calc(50% - 120px);
+    margin-left: 0;
+    margin-right: 0;
+    vertical-align: middle;
+    border-bottom: 1px solid;
+    margin-bottom: 12px;
+}
+
+#hr-blog::before,
+#hr-blog::after {
+    content: "";
+    display: inline-block;
+    max-width: 255px;
+    width: calc(50% - 127.5px);
     margin-left: 0;
     margin-right: 0;
     vertical-align: middle;
@@ -279,4 +296,8 @@ a {
     letter-spacing: 3px;
     padding-right: 15px;
     padding-left: 15px;
+}
+
+.blog-posts {
+    margin-top: 35px;
 }
