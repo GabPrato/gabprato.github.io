@@ -1,15 +1,25 @@
-body {
-    min-width: 720px;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
+@media screen and (max-width: 519px) {
+    #small-screen-author-list {
+        display: block;
+    }
+    #large-screen-author-list {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 520px) {
+    #small-screen-author-list {
+        display: none;
+    }
+    #large-screen-author-list {
+        display: block;
+    }
 }
 
 .profile-with-name {
     display: flex;
     align-items: center; /* This will vertically center align the text with the image */
-    margin-left: 9px;
+    margin-left: 1px;
     margin-top: -2.5px;
     margin-bottom: -2.5px;
     text-decoration: none;
@@ -31,7 +41,7 @@ body {
     font-weight: normal; /* Regular font weight for simplicity */
     letter-spacing: normal; /* Standard letter spacing */
     transition: color 0.25s ease-in-out; /* Smooth transition for the effect */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    
 }
 
 .profile-with-name:hover .name-text {
@@ -40,13 +50,14 @@ body {
 
 #hr-menu {
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
     padding-left: 0;
     padding-right: 0;
     height: 1px;
     background-color: #DDDDDD;
     border: none;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 #blog_post_name {
@@ -59,7 +70,7 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 29px;
 }
 
 #paper-links {
@@ -154,186 +165,210 @@ body {
 }
 
 #slide7 {
-    width: 120%;
-    height: auto;
-    display: block;
-    margin-left: -10%; /* Half of the extra 50% width to center the image */
-    margin-right: -10%;
+    width: 100%;
+    position: absolute;
+    top: -0.22%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 106%;
+    object-fit: cover;
 }
 
 #slide7-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
-    position: relative; /* For positioning context */
-    height: 460px;
+    position: relative;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 63.8%;
 }
 
 #slide8 {
-    width: 120%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    top: -30px; /* Adjust this to control the cropping from the top */
-    margin-left: -10%; /* Half of the extra 50% width to center the image */
-    margin-right: -10%;
+    top: -6.8%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 109.2%;
+    object-fit: cover;
 }
 
 #slide8-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 445px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 61.8%;
 }
 
 #slide9 {
-    width: 120%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    top: -160px; /* Adjust this to control the cropping from the top */
-    margin-left: -10%; /* Half of the extra 50% width to center the image */
-    margin-right: -10%;
+    top: -101%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 307%;
+    object-fit: cover;
 }
 
 #slide9-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 160px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 22%;
 }
 
 #slide10 {
-    width: 130%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    top: -90px; /* Adjust this to control the cropping from the top */
-    margin-left: -15%; /* Half of the extra 50% width to center the image */
-    margin-right: -15%;
+    top: -24%;
+    left: 0.1%;
+    right: 0;
+    bottom: 0;
+    height: 139%;
+    object-fit: cover;
 }
 
 #slide10-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 380px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 52.6%;
 }
 
 #slide11 {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
-    top: -80px; /* Adjust this to control the cropping from the top */
+    top: -2.3%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 101%;
+    object-fit: cover;
 }
 
 #slide11-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 255px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 35.5%;
 }
 
 #slide12 {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
-    top: -45px; /* Adjust this to control the cropping from the top */
+    top: -3%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
 #slide12-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 315px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 43.7%;
 }
 
 #slide13 {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
-    top: -55px; /* Adjust this to control the cropping from the top */
+    top: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
 #slide13-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 315px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 46%;
 }
 
-#slide15 {}
+#slide15 {
+    width: 100%;
+    position: absolute;
+    top: -1%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
 
 #slide15-container {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 64.4%;
 }
 
 #slide16top {
-    width: 150%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    margin-left: -25%; /* Half of the extra 50% width to center the image */
-    margin-right: -25%;
+    top: -39%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 180%;
+    object-fit: cover;
 }
 
 #slide16top-container {
-    margin-top: 25px;
-    margin-bottom: 25px;
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 290px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 47.1%;
 }
 
 #slide16bot {
-    width: 150%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    margin-left: -25%; /* Half of the extra 50% width to center the image */
-    margin-right: -25%;
-    top: -300px; /* Adjust this to control the cropping from the top */
+    top: -32.8%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 167%;
+    object-fit: cover;
 }
 
 #slide16bot-container {
-    margin-top: 30px;
-    margin-bottom: 25px;
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 310px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 50.6%;
+}
+
+#slide17, #slide18 {
+    width: 100%;
+    position: absolute;
+    top: 0.1%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 95.7%;
+    object-fit: cover;
 }
 
 #slide17 {
-    width: 110%;
-    height: auto;
-    display: block;
-    position: absolute;
-    margin-left: -5%; /* Half of the extra 50% width to center the image */
-    margin-right: -5%;
     opacity: 1;
 }
 
 #slide18 {
-    width: 110%;
-    height: auto;
-    display: block;
-    position: absolute;
-    margin-left: -5%; /* Half of the extra 50% width to center the image */
-    margin-right: -5%;
     animation: alternateImage 8s infinite;
     opacity: 0;
 }
@@ -357,175 +392,214 @@ body {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 465px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 64.7%;
 }
 
 #slide20top {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
+    top: 0.5%;
+    left: -0.5%;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
 #slide20top-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 191px;
     overflow: hidden; /* Hides the overflowing part of the image */
-    margin-top: 30px;
+    padding-top: 34.8%;
 }
 
 #slide20bot {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
-    top: -193px;
+    top: -5.9%;
+    left: -0.5%;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
 #slide20bot-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 250px;
     overflow: hidden; /* Hides the overflowing part of the image */
-    margin-top: 30px;
+    padding-top: 34.8%;
 }
 
 #slide21 {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
-    top: -30px; /* Adjust this to control the cropping from the top */
+    top: -0.7%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
 #slide21-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 350px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 48.6%;
 }
 
 #slide19 {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    width: 100%;
+    position: absolute;
+    top: 4.23%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 91%;
+    object-fit: cover;
+}
+
+#slide19-container {
+    display: block;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+    position: relative;
+    overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 60.9%;
 }
 
 #slide22 {
-    width: 115%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    margin-left: -7.5%; /* Half of the extra 50% width to center the image */
-    margin-right: -7.5%;
+    top: 3.2%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 94%;
+    object-fit: cover;
 }
 
 #slide22-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 480px;
     overflow: hidden; /* Hides the overflowing part of the image */
-    margin-top: 15px;
+    padding-top: 68.7%;
 }
 
 #slide24 {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
-    top: -90px; /* Adjust this to control the cropping from the top */
+    top: -41.5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 187%;
+    object-fit: cover;
 }
 
 #slide24-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 220px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 30.6%;
 }
 
 #slide27 {
-    width: 110%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    margin-left: -5%;
-    margin-right: -5%;
-    top: -20px;
+    top: -5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120%;
+    object-fit: cover;
 }
 
 #slide27-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 370px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 51.5%;
 }
 
 #slide29 {
-    width: 200%;
-    height: auto;
-    display: block;
+    width: 100%;
     position: absolute;
-    margin-left: -50%;
-    margin-right: -50%;
-    top: -240px;
+    top: -74.5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 252%;
+    object-fit: cover;
 }
 
 #slide29-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 320px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 44.6%;
 }
 
 #slide30 {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
+    top: 4%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 91%;
+    object-fit: cover;
 }
 
 #slide30-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    margin-top: 20px;
-    height: 425px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 58%;
 }
 
 #slide31 {
     width: 100%;
-    height: auto;
-    display: block;
     position: absolute;
+    top: 6.1%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90%;
+    object-fit: cover;
 }
 
 #slide31-container {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    margin-top: 20px;
-    height: 415px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 60.5%;
 }
 
 .slide33-34 {
-    width: 115%;
-    height: auto;
-    display: block;
-    position: absolute;
-    margin-left: -7.5%;
-    margin-right: -7.5%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+}
+
+.slide33-34 img {
+    width: 100%;
+    position: absolute;
+    top: -0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 99%;
+    object-fit: cover;
 }
 
 #slide33 {
@@ -545,31 +619,44 @@ body {
     display: block;
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
-    height: 470px;
     overflow: hidden; /* Hides the overflowing part of the image */
+    padding-top: 65.3%;
 }
 
-#author-list-row1, #author-list-row2 {
+#small-author-list-row1, #small-author-list-row2, #small-author-list-row3, #large-author-list-row1, #large-author-list-row2 {
     font-size: 20px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-#author-list-row1 {
-    margin-top: 12.5px;
+#small-author-list-row1, #large-author-list-row1 {
+    margin-top: 14px;
 }
 
-#author-list-row2 {
-    margin-top: -5px;
+#small-author-gabriele {
+    margin-right: 2%;
 }
 
-#author-gabriele, #author-jerry, #author-shagun {
-    padding-right: 20px;
+#small-author-prasanna {
+    margin-right: 2%;
 }
 
-#author-gabriele {
-    padding-left: 50px;
+#large-author-gabriele {
+    margin-right: 2%;
+    margin-left: 1%;
+}
+
+#large-author-jerry {
+    margin-right: 2%;
+}
+
+#large-author-shagun {
+    margin-right: 2%;
+}
+
+#small-author-list-row2, #small-author-list-row2, #large-author-list-row2 {
+    margin-top: 2px;
 }
 
 #author-link {

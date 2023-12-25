@@ -60,9 +60,9 @@ permalink: /epik-eval/
         We began by dividing stories into smaller passages.
         <div id="slide15-container"><img id="slide15" src="/blog_posts/epik-eval/images/slide15.svg"/></div>
         Next, we trained one model on these unsegmented stories
-        <div id="slide16top-container"><img id="slide16top" src="/blog_posts/epik-eval/images/slide16.svg"/></div>
+        <div id="slide16top-container"><img id="slide16top" src="/blog_posts/epik-eval/images/slide16top.svg"/></div>
         and another on the segmented versions.
-        <div id="slide16bot-container"><img id="slide16bot" src="/blog_posts/epik-eval/images/slide16.svg"/></div>
+        <div id="slide16bot-container"><img id="slide16bot" src="/blog_posts/epik-eval/images/slide16bot.svg"/></div>
         The critical test involved querying the latter model with questions that required synthesizing information from multiple story segments.
         <div id="slide17-18-container">
             <img id="slide17" src="/blog_posts/epik-eval/images/slide17.svg"/>
@@ -73,15 +73,15 @@ permalink: /epik-eval/
         Unlike multi-hop question answering, our models relied exclusively on the information encoded in their parameters, without access to the original documents.
         <br/><br/>
         For practical reasons, we used self-generated short stories, each only a few sentences long, and segmented them by sentence. We trained the models using standard pre-training objectives, such as causal or masked language modeling. Here's an illustrative example: a story about a person visiting a restaurant and ordering items.
-        <div id="slide20top-container"><img id="slide20top" src="/blog_posts/epik-eval/images/slide20.svg"/></div>
-        <div id="slide20bot-container"><img id="slide20bot" src="/blog_posts/epik-eval/images/slide20.svg"/></div>
+        <div id="slide20top-container"><img id="slide20top" src="/blog_posts/epik-eval/images/slide20top.svg"/></div>
+        <div id="slide20bot-container"><img id="slide20bot" src="/blog_posts/epik-eval/images/slide20bot.svg"/></div>
         In our question-answer format, the model first had to recall the entire story, testing its ability to recall and consolidate the learned segments. This was followed by a reasoning statement and a conclusive answer.
         <div id="slide21-container"><img id="slide21" src="/blog_posts/epik-eval/images/slide21.svg"/></div>
         To acclimate models to this format, we incorporated question-answer example pairs in the training dataset.
 
         <div id="subsection_title">Results</div>
         Our findings revealed a significant disparity in performance between models trained on segmented stories and those trained on unsegmented stories. The following plot illustrates this difference: models trained on segmented stories (<span class="orange-text">orange</span>) underperform compared to those trained on unsegmented stories (<span class="blue-text">blue</span>), with the y-axis representing the percentage of correctly answered questions.
-        <img id="slide19" src="/blog_posts/epik-eval/images/slide19.svg"/>
+        <div id="slide19-container"><img id="slide19" src="/blog_posts/epik-eval/images/slide19.svg"/></div>
         Breaking down our analysis into the three components—recall, reasoning, and the final answer—yielded the following insights:
         <div id="slide22-container"><img id="slide22" src="/blog_posts/epik-eval/images/slide22A.svg"/></div>
         Firstly, we assessed the accuracy of recall alone. Here, a notable performance gap was observed, favoring models trained on unsegmented stories.
@@ -121,19 +121,30 @@ permalink: /epik-eval/
             <div id="slide34" class="slide33-34"><img src="/blog_posts/epik-eval/images/slide34.svg"/></div>
         </div>
         To delve deeper into our findings and methodology, we invite you to read the full <span class="in-text-paper-link-container"><a class="in-text-paper-link" href="https://arxiv.org/abs/2310.15372">EpiK-Eval</a></span> paper. For those interested in hands-on exploration or further research, our code is available on <span class="in-text-paper-link-container"><a class="in-text-paper-link" href="https://github.com/chandar-lab/EpiK-Eval">Github</a></span>. We encourage collaboration and innovation in this exciting field and look forward to seeing how the community advances these concepts.
-        <table id="author-list-row1">
-            <tr>
-                <td id="author-gabriele"><a id="author-link" href="https://gabprato.github.io/">Gabriele Prato</a></td>
-                <td id="author-jerry"><a id="author-link" href="https://jhuang265.github.io/">Jerry Huang</a></td>
-                <td><a id="author-link" href="https://cs.mcgill.ca/~pparth2/">Prasannna Parthasarathi</a></td>
-            </tr>
-        </table>
-        <table id="author-list-row2">
-            <tr>
-                <td id="author-shagun"><a id="author-link" href="https://shagunsodhani.com/">Shagun Sodhani</a></td>
-                <td><a id="author-link" href="http://sarathchandar.in/">Sarath Chandar</a></td>
-            </tr>
-        </table>
+        <div id="small-screen-author-list">
+            <div id="small-author-list-row1">
+                <span id="small-author-gabriele"><a id="author-link" href="https://gabprato.github.io/">Gabriele Prato</a></span>
+                <span id="small-author-jerry"><a id="author-link" href="https://jhuang265.github.io/">Jerry Huang</a></span>
+            </div>
+            <div id="small-author-list-row2">
+                <span id="small-author-prasanna"><a id="author-link" href="https://cs.mcgill.ca/~pparth2/">Prasannna Parthasarathi</a></span>
+                <span id="small-author-shagun"><a id="author-link" href="https://shagunsodhani.com/">Shagun Sodhani</a></span>
+            </div>
+            <div id="small-author-list-row3">
+                <span id="small-author-sarath"><a id="author-link" href="http://sarathchandar.in/">Sarath Chandar</a></span>
+            </div>
+        </div>
+        <div id="large-screen-author-list">
+            <div id="large-author-list-row1">
+                <span id="large-author-gabriele"><a id="author-link" href="https://gabprato.github.io/">Gabriele Prato</a></span>
+                <span id="large-author-jerry"><a id="author-link" href="https://jhuang265.github.io/">Jerry Huang</a></span>
+                <span id="large-author-prasanna"><a id="author-link" href="https://cs.mcgill.ca/~pparth2/">Prasannna Parthasarathi</a></span>
+            </div>
+            <div id="large-author-list-row2">
+                <span id="large-author-shagun"><a id="author-link" href="https://shagunsodhani.com/">Shagun Sodhani</a></span>
+                <span id="large-author-sarath"><a id="author-link" href="http://sarathchandar.in/">Sarath Chandar</a></span>
+            </div>
+        </div>
     </div>
 
     <script>
