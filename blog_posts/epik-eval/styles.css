@@ -167,11 +167,11 @@
 #slide7 {
     width: 100%;
     position: absolute;
-    top: -0.22%;
+    top: -0.22%; /* controls the top-margin */
     left: 0;
     right: 0;
     bottom: 0;
-    height: 106%;
+    height: 106%; /* affects the width and also moves the image down */
     object-fit: cover;
 }
 
@@ -180,7 +180,7 @@
     width: 100%; /* Ensures the container takes the full width of its parent */
     position: relative;
     overflow: hidden; /* Hides the overflowing part of the image */
-    padding-top: 63.8%;
+    padding-top: 63.8%; /* increases both the height and width of the image as well as the container */
 }
 
 #slide8 {
