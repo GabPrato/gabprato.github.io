@@ -151,7 +151,7 @@
     position: relative;
 }
 
-.hyperlink-icon {
+.hyperlink-icon, .hyperlink-icon-subsection {
     width: 20px;
     position: absolute;
     left: -10px;
@@ -161,11 +161,15 @@
     transition: opacity 0.25s, visibility 0.25s;
 }
 
-.section-link:hover .hyperlink-icon {
+.hyperlink-icon-subsection {
+    top: 12px;
+}
+
+.section-link:hover .hyperlink-icon, .section-link:hover .hyperlink-icon-subsection {
     opacity: 1;
 }
 
-.hyperlink-icon:hover .hyperlink-icon {
+.hyperlink-icon:hover .hyperlink-icon, .hyperlink-icon-subsection:hover .hyperlink-icon-subsection {
     opacity: 1;
 }
 
