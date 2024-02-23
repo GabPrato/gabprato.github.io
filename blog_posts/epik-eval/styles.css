@@ -125,23 +125,48 @@
     margin-left: auto;
     margin-right: auto;
     line-height: 1.4;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
-#section_title, #subsection_title {
+.section_title, .subsection_title {
     font-family: 'Montserrat', sans-serif;
     color: #333366;
     font-weight: bold;
-    margin-top: 25px;
     margin-bottom: 10px;
 }
 
-#section_title {
+.section_title {
+    margin-top: 25px;
     font-size: 33px;
 }
 
-#subsection_title {
+.subsection_title {
     font-size: 30px;
+}
+
+.section-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.hyperlink-icon {
+    width: 20px;
+    position: absolute;
+    left: -10px;
+    transform: translateX(-100%); /* Move icon to the left of the link */
+    top: 37px;
+    opacity: 0;
+    transition: opacity 0.25s, visibility 0.25s;
+}
+
+.section-link:hover .hyperlink-icon {
+    opacity: 1;
+}
+
+.hyperlink-icon:hover .hyperlink-icon {
+    opacity: 1;
 }
 
 .in-text-paper-link {
@@ -682,4 +707,98 @@
 #license-link:hover {
     text-decoration: underline;
     color: #333333;
+}
+
+.footnote-link1 {
+    vertical-align: super;
+    transition: color 0.25s ease-in-out; /* Smooth transition for the effect */
+    text-decoration: none;
+    font-size: 14px;
+    color: #006699; /* Medium Blue */
+    font-weight: bold;
+    padding-left: 1px;
+}
+
+.footnote-link1:hover {
+    color: #0099cc;
+}
+
+.footnote {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.footnote-link2 {
+    transition: color 0.25s ease-in-out; /* Smooth transition for the effect */
+    text-decoration: none;
+    color: #006699; /* Medium Blue */
+    font-weight: bold;
+}
+
+.footnote-link2:hover {
+    color: #0099cc;
+}
+
+.bibtex {
+    max-width: 720px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+}
+
+.bibtex-header {
+    font-family: 'Montserrat', sans-serif;
+    color: #333366;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.bibtex-entry {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    overflow-x: auto;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+.bibtex-entry-container {
+    align-items: center;
+    position: relative;
+}
+
+.copy-text-icon-container {
+    position: absolute;
+    left: 707px;
+    transform: translateX(-100%); /* Move icon to the left of the link */
+    top: 13px;
+    cursor: pointer;
+}
+
+.copy-text-icon, .copy-text-icon-hover {
+    width: 27px;
+    opacity: 0;
+    transition: opacity 0.25s, visibility 0.25s;
+}
+
+.copy-text-icon-hover {
+    position: absolute;
+    top: 0;
+    left: 0; /* Overlay hover icon on top of the default icon */
+}
+
+.bibtex-entry-container:hover .copy-text-icon {
+    opacity: 1;
+}
+
+.copy-text-icon-container:hover .copy-text-icon{
+    opacity: 0;
+}
+
+.copy-text-icon-container:hover .copy-text-icon-hover{
+    opacity: 1;
 }
